@@ -53,7 +53,7 @@ For the response, we should include two parts:
 
 If we intend to log in, we can send the following request:
 
-```json
+```http
 POST /api/v1 HTTP/1.1
 
 {
@@ -67,7 +67,7 @@ POST /api/v1 HTTP/1.1
 
 The returned value may look like this:
 
-```json
+```http
 HTTP/1.1 200 OK
 
 {
@@ -80,7 +80,7 @@ HTTP/1.1 200 OK
 
 Then we can perform some restricted operations using this token, such as updating our own profile:
 
-```json
+```http
 POST /api/v1 HTTP/1.1
 
 {
@@ -124,7 +124,7 @@ When errors occur, it is recommended to respond with a type of ERROR and a resul
 
 Suppose we send a request to an API server that complies with Simple Talk, but it encounters an unexpected error, such as failure to connect to the database, resulting in a failed request. In this case, the HTTP response may be as follows:
 
-```json
+```http
 HTTP/1.1 200 OK
 
 {
@@ -138,7 +138,7 @@ HTTP/1.1 200 OK
 
 Alternatively, if we attempt to insert a user and the username, which should be globally unique, is already taken (and we even forgot to enter the initial password, oh no!), we might have:
 
-```json
+```http
 HTTP/1.1 200 OK
 
 {
